@@ -20,23 +20,50 @@ app.get('/hai', (req, res) => {
   res.send('hai')
 }); */
 
-app.get('/user',(req,res)=>{
-  res.send('get : data fetched succesfully ')
+
+//middleware-checking:: 
+/* app.use('/admin', (req, res, next) => {
+
+  next();
+
+}, (req, res, next) => {
+
+  next();
+
+}, (req, res, next) => {
+
+  next(); 
+
+}, (req, res) => {
+
+  res.send('res four');
+
+}); */
+
+
+app.get('/user', (req, res) => {
+
+  const details = {
+    name: "sajin",
+    id: 101
+  }
+
+  res.send(details);
 });
 
-app.post('/user',(req,res)=>{
+app.post('/user', (req, res) => {
   res.send('post:data stored succesfully')
 });
 
-app.put('/user',(req,res)=>{
+app.put('/user', (req, res) => {
   res.send('put: data replacable successfully')
 });
 
-app.patch('/user',(req,res)=>{
+app.patch('/user', (req, res) => {
   res.send('patch: data updated succesfully')
 });
 
-app.delete('/user',(req,res)=>{
+app.delete('/user', (req, res) => {
   res.send('deleted successfully')
 });
 
